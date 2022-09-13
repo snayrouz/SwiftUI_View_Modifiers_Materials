@@ -120,7 +120,14 @@ struct Validate: ViewModifier {
 }
 
 // TextField extension
-// TODO: 6
+extension TextField {
+  func validateEmail(
+    value: String,
+    validator: @escaping (String) -> (Bool)
+  ) -> some View {
+    modifier(Validate(value: value, validator: validator))
+  }
+}
 
 // Image extension
 // TODO: 7
