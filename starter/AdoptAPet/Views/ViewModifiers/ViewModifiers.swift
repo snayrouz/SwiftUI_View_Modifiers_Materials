@@ -105,7 +105,9 @@ struct PrimaryButtonStyle: ButtonStyle {
 
 // Email Validate View Modifier
 /*
- 1. Create a Validate ViewModifier with two stored properties. value is of type String and it'll hold an email address that the user enters in the text field. validator is a closure that takes a String and re
+ 1. Create a Validate ViewModifier with two stored properties. value is of type String and it'll hold an email address that the user enters in the text field. validator is a closure that takes a String and returns a Boolean
+ 2. Add required body(context:) method that returns some View to conform to the ViewModifier protocol.
+ 3. Validate the value and apply a green border on the content if validator is true.
  */
 struct Validate: ViewModifier {
   var value: String
