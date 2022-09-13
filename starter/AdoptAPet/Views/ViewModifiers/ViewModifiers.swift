@@ -99,12 +99,23 @@ struct PrimaryButtonStyle: ButtonStyle {
             lineWidth: 1.5
           )
       )
-
+    
   }
 }
 
 // Email Validate View Modifier
-// TODO: 5
+/*
+ 1. Create a Validate ViewModifier with two stored properties. value is of type String and it'll hold an email address that the user enters in the text field. validator is a closure that takes a String and re
+ */
+struct Validate: ViewModifier {
+  var value: String
+  var validator: (String) -> Bool
+  
+  func body(content: Content) -> some View {
+    content
+      .border(validator(value) ? .green : .secondary)
+  }
+}
 
 // TextField extension
 // TODO: 6
