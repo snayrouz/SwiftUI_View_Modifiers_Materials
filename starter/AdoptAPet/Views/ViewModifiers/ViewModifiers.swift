@@ -74,7 +74,24 @@ struct ButtonLabelModifier: ViewModifier {
 }
 
 // Button Style
-// TODO: 4
+/*
+ 1. Create a PrimaryButtonStyle struct the conforms to ButtonStyle
+ 2. Add makeBody(configuration:) method that returns some View. The configuration methor parameter is of type Configuration.
+ 3. One of these properties is the button's label. By calling configuration.label, you're explicityly saying you want modifiers to style the button's label.
+ */
+struct PrimaryButtonStyle: ButtonStyle {
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .font(.title2)
+      .padding(.horizontal, 30)
+      .padding(.vertical, 8)
+      .foregroundColor(Color.pink)
+      .overlay(
+        RoundedRectangle(cornerRadius: 8)
+          .stroke(Color.pink, lineWidth: 1.5)
+      )
+  }
+}
 
 // Email Validate View Modifier
 // TODO: 5
