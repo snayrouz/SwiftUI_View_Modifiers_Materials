@@ -33,7 +33,19 @@
 import SwiftUI
 
 // Title ViewModifier
-// TODO: 1
+/*
+ 1. create a struct called DetailedInfoTitleModifier that conforms to the ViewModifier protocol.
+ 2. Add the body(context:) method that returns some View. The content parameter is the viwe on which you apply the modifiers
+ 3. Add the modifiers
+ */
+struct DetailedInfoTitleModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .lineLimit(1)
+      .font(.title2)
+      .bold()
+  }
+}
 
 // Text extension
 // TODO: 2
