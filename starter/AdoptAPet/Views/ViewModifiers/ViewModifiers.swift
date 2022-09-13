@@ -48,7 +48,11 @@ struct DetailedInfoTitleModifier: ViewModifier {
 }
 
 // Text extension
-// TODO: 2
+extension Text {
+  func detailedInfoTitle() -> some View {
+    modifier(DetailedInfoTitleModifier())
+  }
+}
 
 // Button Label Modifier
 // TODO: 3
