@@ -130,7 +130,22 @@ extension TextField {
 }
 
 // Image extension
-// TODO: 7
+/*
+ 1. Create an Image extension with a single method, photoStyle(), that returns some View. photoStyle() takes two parameters, maxWidth and maxHeight. These parameters can differ across views, so you add default value to .infinity
+ 2. self refers to the specific view for which you are creating the extension. In this case, Image. When creating view extensions, self comes in handy.
+ */
+extension Image {
+  func photoStyle(
+    withMaxWidth maxWidth: CGFloat = .infinity,
+    withMaxHeight maxHeight: CGFloat = 300
+  ) -> some View {
+    self
+      .resizable()
+      .scaledToFill()
+      .frame(maxWidth: maxWidth, maxHeight: maxHeight)
+      .clipped()
+  }
+}
 
 // CHALLENGE SOLUTION
 // View extension
