@@ -75,9 +75,7 @@ struct PetDetailedInformationView: View {
 
       // Sex
       Text("Sex")
-        .lineLimit(1)
-        .font(.title2)
-        .bold()
+        .modifier(DetailedInfoTitleModifier())
       HStack {
         Image(systemName: "bolt.circle")
           .resizable()
@@ -89,9 +87,7 @@ struct PetDetailedInformationView: View {
 
       // Age
       Text("Age")
-        .lineLimit(1)
-        .font(.title2)
-        .bold()
+        .modifier(DetailedInfoTitleModifier())
       HStack {
         Image(systemName: "star")
           .resizable()
